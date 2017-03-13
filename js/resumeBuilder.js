@@ -139,7 +139,7 @@ var work = {
 };
 
 var projects = {
-    project: [{
+    projects: [{
             title: 'Online Resume',
             dates: '2017',
             description: 'Interactive resume',
@@ -164,11 +164,11 @@ var projects = {
 
     display: function() {
         $('#projects').append(HTMLprojectStart);
-        for (var i = 0; i < projects.project.length; i++) {
-            var formattedProjectTitle = HTMLprojectTitle.replace('%data%', projects.project[i].title);
-            formattedProjectTitle = $(formattedProjectTitle).attr('href', projects.project[i].url);
-            var formattedProjectDates = HTMLprojectDates.replace('%data%', projects.project[i].dates);
-            var formattedProjectDescription = HTMLprojectDescription.replace('%data%', projects.project[i].description);
+        for (var i = 0; i < projects.projects.length; i++) {
+            var formattedProjectTitle = HTMLprojectTitle.replace('%data%', projects.projects[i].title);
+            formattedProjectTitle = $(formattedProjectTitle).attr('href', projects.projects[i].url);
+            var formattedProjectDates = HTMLprojectDates.replace('%data%', projects.projects[i].dates);
+            var formattedProjectDescription = HTMLprojectDescription.replace('%data%', projects.projects[i].description);
             //var formattedProjectImage = HTMLprojectImage.replace('%data%', projects.project[i].images);
 
             $('.project-entry').append(formattedProjectTitle);
@@ -176,8 +176,8 @@ var projects = {
             $('.project-entry').append(formattedProjectDescription);
             //$('.project-entry').append(formattedProjectImage);    
 
-            for (var j = 0; j < projects.project[i].images.length; j++) {
-                var formattedProjectImage = HTMLprojectImage.replace('%data%', projects.project[i].images[j]);
+            for (var j = 0; j < projects.projects[i].images.length; j++) {
+                var formattedProjectImage = HTMLprojectImage.replace('%data%', projects.projects[i].images[j]);
                 $('.project-entry').append(formattedProjectImage);
             }
         }

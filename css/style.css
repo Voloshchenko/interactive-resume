@@ -177,9 +177,16 @@ span {
 }
 .project-entry img {
   max-width: 30%;
-
-
 }
+
+.infoWindow {
+  width: 300px;
+}
+
+.infoWindow img{
+  width: 200px;
+}
+
 
 /* Media queries to handle various device widths */
 

@@ -178,6 +178,11 @@ function initializeMap() {
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
         //infowindow.setContent("Hello");
+        var streetviewUrl = 'https://maps.googleapis.com/maps/api/streetview?size=600x400&location=' + marker.title + '';
+        infoWindow.setContent('<div class="infoWindow">' +
+          '<h4>' + marker.title + '</h4>' + '<br>' +
+          '<img src="' + streetviewUrl + '">' +
+          '</div>');
         infoWindow.open(map, this);
       // your code goes here!
     });
@@ -197,6 +202,7 @@ function initializeMap() {
   */
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
+      console.log(results[0]);
       createMapMarker(results[0]);
     }
   }
